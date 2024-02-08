@@ -1,0 +1,108 @@
+body {
+    background-image: url("https://cdn.discordapp.com/attachments/1200473209947033775/1202990247332548629/219a09d5c2d9e50e4c2d20c9a03e09af.gif?ex=65cf76f9&is=65bd01f9&hm=a454ce2ffa30a9da65e1da9bfe3bbb47b4e2653f5f68396d0ddeccfb188bb5cf&");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.about-me {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 20px;
+    color: white;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    opacity: 1;
+    text-shadow: 0px 0px 10px white;
+    max-width: 55%;
+    /* Limit the width of the box */
+    margin-left: auto;
+    /* Center the box horizontally */
+    margin-right: auto;
+    /* Center the box horizontally */
+}
+
+.about-me.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+button {
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    opacity: 0.9;
+    transition: all 0.8s ease;
+}
+
+button:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+#profile-image {
+    border-radius: 25px;
+    margin-top: 20px;
+}
+
+.show {
+    color: white;
+    font-size: 16px;
+    text-shadow: 0px 0px 10px white;
+    margin-top: 10px;
+}
+
+.glow {
+    animation: glow 1s ease-in-out infinite alternate;
+    font-family: Arial, sans-serif;
+}
+
+.typing-text::after {
+    content: "｜";
+    display: inline-block;
+    animation: blink 0.6s infinite;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0px 0px 10px white;
+    }
+
+    to {
+        text-shadow: 0px 0px 20px white;
+    }
+}
+
+@keyframes blink {
+
+    from,
+    to {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
