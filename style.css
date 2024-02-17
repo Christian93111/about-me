@@ -1,5 +1,5 @@
 body {
-    background-image: url("https://cdn.discordapp.com/attachments/1200473209947033775/1202990247332548629/219a09d5c2d9e50e4c2d20c9a03e09af.gif?ex=65cf76f9&is=65bd01f9&hm=a454ce2ffa30a9da65e1da9bfe3bbb47b4e2653f5f68396d0ddeccfb188bb5cf&");
+    background-image: url("images/Cover.gif");
     background-size: cover;
     background-position: center;
     display: flex;
@@ -25,12 +25,9 @@ body::-webkit-scrollbar {
     transition: all 0.3s ease;
     opacity: 1;
     text-shadow: 0px 0px 10px white;
-    max-width: 55%;
-    /* Limit the width of the box */
-    margin-left: auto;
-    /* Center the box horizontally */
-    margin-right: auto;
-    /* Center the box horizontally */
+    max-width: 55%; /* Limit the width of the box */
+    margin-left: auto; /* Center the box horizontally */
+    margin-right: auto; /* Center the box horizontally */
 }
 
 .about-me.hide {
