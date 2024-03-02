@@ -104,29 +104,25 @@ button:hover {
     }
 }
 
-/* Mobile responsiveness */
+/* Mobile Version */
 @media only screen and (max-width: 480px) {
-    body {
-        background-attachment: scroll; /* Prevent fixed background on mobile */
+
+body {
+    background-attachment: scroll; /* Prevent fixed background on mobile */
     }
 
-    .about-me {
-        max-width: 90%; /* Increase width for smaller screens */
-        padding: 15px; /* Adjust padding */
-        margin-bottom: 10px; /* Adjust bottom margin */
+.about-me {
+    max-width: 90%; /* Increase width for smaller screens */
+    padding: 15px; /* Adjust padding */
+    margin-bottom: 10px; /* Adjust bottom margin */
     }
 
-    .button-container {
-        flex-direction: column; /* Stack buttons vertically */
-    }
-
-    button {
-        width: 150%; /* Full-width buttons */
-        margin: 10px auto; /* Center buttons with automatic margins */
-        padding: 12px 0; /* Adjust padding */
+button {
+    font-size: 15px;
+    padding: 10px; /* Adjust padding */
     }
 
     .glow {
-        font-size: smaller; /* Adjust font size */
+    font-size: smaller; /* Adjust font size */
     }
 }
