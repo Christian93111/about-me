@@ -1,0 +1,7 @@
+#remove .html file extension
+#guide https://scarfall-conquest.net/news.html will become https://scarfall-conquest.net/news
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [NC,L]
