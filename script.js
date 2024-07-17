@@ -1,4 +1,4 @@
-const typingText = `Having no "social life" I've found is a very happy place to be in the world of coding and technology. It's a place I love, a place where I constantly immerse myself in the pursuit of knowledge and improving what I do. Teaching myself to draw has become a hobby for me and I am always looking for new challenges to improve my skills. I can't get enough!.`;
+const typingText = `Hi, I'm Christian, an 18-year-old. Having no "social life" I've found is a very happy place to be in the world of coding and technology. It's a place I love, a place where I constantly immerse myself in the pursuit of knowledge and improving what I do. Teaching myself to draw has become a hobby for me and I am always looking for new challenges to improve my skills. I can't get enough!.`;
 const typingDelay = 20;
 const showText = document.querySelector('.typing-text');
 let charIndex = 0;
@@ -65,11 +65,11 @@ document.getElementById('discord').addEventListener('click', function () {
 document.getElementById('youtube').addEventListener('click', function () {
     if (isMobile) {
         try {
-            navigator.startApp.check('vnd.youtube://user/UC1nvZa059uaieBAklXWA7PA').then(function () {
-                window.location.href = 'vnd.youtube://user/UC1nvZa059uaieBAklXWA7PA';
+            navigator.startApp.check('vnd.youtube://channel/@CDGamingYouTube').then(function () {
+                window.location.href = 'vnd.youtube://channel/@CDGamingYouTube';
             });
         } catch (error) {
-            window.location.href = 'https://m.youtube.com/@CDGamingYouTube';
+            window.location.href = 'https://www.youtube.com/@CDGamingYouTube';
         }
     } else {
         window.location.href = 'https://www.youtube.com/@CDGamingYouTube';
