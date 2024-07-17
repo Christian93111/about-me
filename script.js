@@ -65,8 +65,8 @@ document.getElementById('discord').addEventListener('click', function () {
 document.getElementById('youtube').addEventListener('click', function () {
     if (isMobile) {
         try {
-            navigator.startApp.check('vnd.youtube://channel/@CDGamingYouTube').then(function () {
-                window.location.href = 'vnd.youtube://channel/@CDGamingYouTube';
+            navigator.startApp.check('vnd.youtube://channel/UC1nvZa059uaieBAklXWA7PA').then(function () {
+                window.location.href = 'vnd.youtube://channel/UC1nvZa059uaieBAklXWA7PA';
             });
         } catch (error) {
             window.location.href = 'https://www.youtube.com/@CDGamingYouTube';
