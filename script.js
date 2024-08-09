@@ -1,4 +1,4 @@
-const typingText = `Hi, I'm Christian, an 18-year-old. Having no "social life" I've found is a very happy place to be in the world of coding and technology. It's a place I love, a place where I constantly immerse myself in the pursuit of knowledge and improving what I do. Teaching myself to draw has become a hobby for me and I am always looking for new challenges to improve my skills. I can't get enough!.`;
+const typingText = `Hi, I'm Christian, a BSIT student. I've found is a very happy place to be in the world of coding and technology. It's a place I love, a place where I constantly immerse myself in the pursuit of knowledge and improving what I do. Teaching myself to draw has become a hobby for me and I am always looking for new challenges to improve my skills. I can't get enough!`;
 const typingDelay = 20;
 const showText = document.querySelector('.typing-text');
 let charIndex = 0;
@@ -14,7 +14,7 @@ function typeText() {
 typeText();
 
 
-// Deep Links (Universal Links) For Mobile Users And Desktop Users Check on HTML Code on `` Line 18 Code or <div class="button-container"> ``
+// Deep Links (Universal Links) For Mobile Users And Desktop Users Check on HTML Code on ``div class="button-container">``
 // 1.) Check For Mobile Device
 var isMobile = navigator.userAgent.toLowerCase().match(/mobile/i);
 // 2.) Use Different Url Scheme for App if Mobile
@@ -26,7 +26,7 @@ document.getElementById('facebook').addEventListener('click', function () {
                 window.location.href = 'fb://profile/100019100501787'; // 4.) App is Installed, Redirect tO App Url
             });
         } catch (error) {
-            window.location.href = 'https://m.facebook.com/profile.php/?id=100019100501787'; // 5.) App is not Installed, Show a Link tO The App (Maybe this Link Works for FB Lite Users)
+            window.location.href = 'https://m.facebook.com/profile.php/?id=100019100501787'; // 5.) App is not Installed, Show a Link to The App (Maybe this Link Works for FB Lite Users)
         }
     } else {
         window.location.href = 'https://www.facebook.com/CDR9311'; // Desktop Users

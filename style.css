@@ -11,10 +11,6 @@ body {
     overflow: hidden;
 }
 
-body::-webkit-scrollbar {
-    display: none;
-}
-
 .about-me {
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 15px;
@@ -28,11 +24,6 @@ body::-webkit-scrollbar {
     max-width: 55%; /* Limit the width of the box */
     margin-left: auto; /* Center the box horizontally */
     margin-right: auto; /* Center the box horizontally */
-}
-
-.about-me.hide {
-    opacity: 0;
-    pointer-events: none;
 }
 
 .button-container {
@@ -123,4 +114,39 @@ button {
     .glow {
     font-size: smaller; /* Adjust font size */
     }
+}
+
+/* Custom Scrollbar for Webkit browsers (Chrome, Safari) */
+
+::-webkit-scrollbar {
+
+    width: 8px; /* thinner width */
+    height: 8px; /* thinner height */
+}
+
+::-webkit-scrollbar-track {
+    background: #000; /* black background */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #fff; /* white thumb */
+    border-radius: 10px;
+    border: 2px solid #000; /* black border */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #ccc; /* light gray on hover */
+}
+
+/* Custom Scrollbar for Firefox */
+body {
+    scrollbar-width: thin; /* thin scrollbar for Firefox */
+    scrollbar-color: #fff #000; /* white thumb, black track */
+}
+
+/* Scrollbar styles for all elements */
+* {
+    scrollbar-width: thin; /* thin scrollbar for all elements */
+    scrollbar-color: #fff #000; /* white thumb, black track */
 }
