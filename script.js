@@ -103,3 +103,19 @@ document.getElementById('replit').addEventListener('click', function () {
         window.location.href = 'https://replit.com/@CDR9311';
     }
 });
+
+document.getElementById('chess').addEventListener('click', function () {
+
+    if (isMobile) {
+
+        try {
+            navigator.startApp.check('https://chess.com/member/christian9311').then(function () {
+                window.location.href = 'https://chess.com/member/christian9311';
+            });
+        } catch (error) {
+            window.location.href = 'https://chess.com/member/christian9311';
+        }
+    } else {
+        window.location.href = 'https://chess.com/member/christian9311';
+    }
+});
