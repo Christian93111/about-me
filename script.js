@@ -119,3 +119,19 @@ document.getElementById('chess').addEventListener('click', function () {
         window.location.href = 'https://chess.com/member/christian9311';
     }
 });
+
+document.getElementById('speedrun').addEventListener('click', function () {
+
+    if (isMobile) {
+
+        try {
+            navigator.startApp.check('https://www.speedrun.com/users/Christian9311').then(function () {
+                window.location.href = 'https://www.speedrun.com/users/Christian9311';
+            });
+        } catch (error) {
+            window.location.href = 'https://www.speedrun.com/users/Christian9311';
+        }
+    } else {
+        window.location.href = 'https://www.speedrun.com/users/Christian9311';
+    }
+});
