@@ -6,8 +6,8 @@ let charIndex = 0;
 function typeText() {
     if (charIndex < typingText.length) {
         showText.textContent += typingText.charAt(charIndex);
-        charIndex++;        
-        setTimeout(typeText, typingDelay);
+        charIndex++;
+        setTimeout(typeText, typingDelay); // Continuously type text with a delay
     }
 }
 
@@ -26,8 +26,20 @@ function openAppOrWeb(appUrl, webUrl) {
         iframe.src = appUrl; // The mobile deep link for the app
         document.body.appendChild(iframe);
 
-        // Immediately fallback to web if the app cannot be opened (without timeout)
-        window.location.href = webUrl; // Redirect to web if app doesn't open
+        // Only trigger fallback if the app doesn't open within a short time
+        let appOpened = false;
+        let timeoutId = setTimeout(function() {
+            if (!appOpened) {
+                window.location.href = webUrl; // Redirect to web if app doesn't open
+            }
+        }, 1500); // Wait 1.5 seconds before redirecting to the web
+
+        // Check if the app is opened (if user is inside the app, it won't fall back)
+        iframe.onload = function() {
+            appOpened = true;
+            clearTimeout(timeoutId); // Clear the fallback if app is successfully opened
+        };
+
     } else {
         // For desktop users, open the web version immediately
         window.location.href = webUrl;
