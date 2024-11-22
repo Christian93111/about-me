@@ -1,30 +1,20 @@
-const typingText = `Hi, I'm Christian, a BSIT student. I've found is a very happy place to be in the world of coding and technology. It's a place I love, a place where I constantly immerse myself in the pursuit of knowledge and improving what I do. Teaching myself to draw has become a hobby for me and I am always looking for new challenges to improve my skills. I can't get enough!`;
-const typingDelay = 20;
-const showText = document.querySelector('.typing-text');
-let charIndex = 0;
-
-function typeText() {
-    if (charIndex < typingText.length) {
-        showText.textContent += typingText.charAt(charIndex);
-        charIndex++;
-        setTimeout(typeText, typingDelay);
-    }
-}
-
-typeText();
-
 // Function to handle deep linking for apps
 function handleAppRedirect(appScheme, appUrl, webUrl) {
     if (isMobile) {
-        try {
-            navigator.startApp.check(appScheme).then(function () {
-                window.location.href = appUrl; // Redirect to app if installed
-            }).catch(function () {
-                window.location.href = webUrl; // Fallback to web version if app is not installed
-            });
-        } catch (error) {
-            window.location.href = webUrl; // Fallback if check fails
-        }
+        // Try opening the app and fall back to the web URL if the app is not installed
+        const appOpen = new Image();
+        appOpen.onload = function () {
+            window.location.href = appUrl; // Redirect to app if installed
+        };
+        appOpen.onerror = function () {
+            window.location.href = webUrl; // Fallback to web version if app is not installed
+        };
+        appOpen.src = appScheme; // Trigger the deep link
+
+        // If the deep link doesn't work, fall back after a small timeout
+        setTimeout(function () {
+            window.location.href = webUrl; // Ensure fallback happens after trying to open the app
+        }, 2000); // Adjust the timeout as necessary
     } else {
         window.location.href = webUrl; // Desktop users always go to the web URL
     }
