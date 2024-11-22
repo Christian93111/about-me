@@ -13,125 +13,62 @@ function typeText() {
 
 typeText();
 
+// Function to handle deep linking for apps
+function handleAppRedirect(appScheme, appUrl, webUrl) {
+    if (isMobile) {
+        try {
+            navigator.startApp.check(appScheme).then(function () {
+                window.location.href = appUrl; // Redirect to app if installed
+            }).catch(function () {
+                window.location.href = webUrl; // Fallback to web version if app is not installed
+            });
+        } catch (error) {
+            window.location.href = webUrl; // Fallback if check fails
+        }
+    } else {
+        window.location.href = webUrl; // Desktop users always go to the web URL
+    }
+}
 
-// Deep Links (Universal Links) For Mobile Users And Desktop Users Check on HTML Code on ``div class="button-container">``
-// 1.) Check For Mobile Device
+// Check for mobile device
 var isMobile = navigator.userAgent.toLowerCase().match(/mobile/i);
-// 2.) Use Different Url Scheme for App if Mobile
+
+// Facebook
 document.getElementById('facebook').addEventListener('click', function () {
-    if (isMobile) {
-        // 3.) Try to Open the App
-        try {
-            navigator.startApp.check('fb://profile/100019100501787').then(function () {
-                window.location.href = 'fb://profile/100019100501787'; // 4.) App is Installed, Redirect tO App Url
-            });
-        } catch (error) {
-            window.location.href = 'https://m.facebook.com/profile.php/?id=100019100501787'; // 5.) App is not Installed, Show a Link to The App (Maybe this Link Works for FB Lite Users)
-        }
-    } else {
-        window.location.href = 'https://www.facebook.com/CDR9311'; // Desktop Users
-    }
+    handleAppRedirect('fb://profile/100019100501787', 'fb://profile/100019100501787', 'https://www.facebook.com/CDR9311');
 });
 
-// 6.) Repeat the same Logic for other Apps
+// Instagram
 document.getElementById('instagram').addEventListener('click', function () {
-    if (isMobile) {
-        try {
-            navigator.startApp.check('instagram://user?username=cdr9311').then(function () {
-                window.location.href = 'instagram://user?username=cdr9311';
-            });
-        } catch (error) {
-            window.location.href = 'https://www.instagram.com/cdr9311';
-        }
-    } else {
-        window.location.href = 'https://www.instagram.com/cdr9311';
-    }
+    handleAppRedirect('instagram://user?username=cdr9311', 'instagram://user?username=cdr9311', 'https://www.instagram.com/cdr9311');
 });
 
+// Discord
 document.getElementById('discord').addEventListener('click', function () {
-    if (isMobile) {
-        try {
-            navigator.startApp.check('discord-user://1167427800916041780').then(function () {
-                window.location.href = 'discord-user://1167427800916041780';
-            });
-        } catch (error) {
-            window.location.href = 'https://discord.com/users/1167427800916041780';
-        }
-    } else {
-        window.location.href = 'https://discord.com/users/1167427800916041780';
-    }
+    handleAppRedirect('discord-user://1167427800916041780', 'discord-user://1167427800916041780', 'https://discord.com/users/1167427800916041780');
 });
 
+// YouTube
 document.getElementById('youtube').addEventListener('click', function () {
-    if (isMobile) {
-        try {
-            navigator.startApp.check('vnd.youtube://channel/UC1nvZa059uaieBAklXWA7PA').then(function () {
-                window.location.href = 'vnd.youtube://channel/UC1nvZa059uaieBAklXWA7PA';
-            });
-        } catch (error) {
-            window.location.href = 'https://www.youtube.com/@CDGamingYouTube';
-        }
-    } else {
-        window.location.href = 'https://www.youtube.com/@CDGamingYouTube';
-    }
+    handleAppRedirect('vnd.youtube://channel/UC1nvZa059uaieBAklXWA7PA', 'vnd.youtube://channel/UC1nvZa059uaieBAklXWA7PA', 'https://www.youtube.com/@CDGamingYouTube');
 });
 
+// GitHub
 document.getElementById('github').addEventListener('click', function () {
-    if (isMobile) {
-        try {
-            navigator.startApp.check('github://user/Christian93111').then(function () {
-                window.location.href = 'github://user/Christian93111';
-            });
-        } catch (error) {
-            window.location.href = 'https://github.com/Christian93111';
-        }
-    } else {
-        window.location.href = 'https://github.com/Christian93111';
-    }
+    handleAppRedirect('github://user/Christian93111', 'github://user/Christian93111', 'https://github.com/Christian93111');
 });
 
+// Replit
 document.getElementById('replit').addEventListener('click', function () {
-    if (isMobile) {
-        try {
-            navigator.startApp.check('replit://user/CDR9311').then(function () {
-                window.location.href = 'replit://user/CDR9311';
-            });
-        } catch (error) {
-            window.location.href = 'https://replit.com/@CDR9311';
-        }
-    } else {
-        window.location.href = 'https://replit.com/@CDR9311';
-    }
+    handleAppRedirect('replit://user/CDR9311', 'replit://user/CDR9311', 'https://replit.com/@CDR9311');
 });
 
+// Chess.com
 document.getElementById('chess').addEventListener('click', function () {
-
-    if (isMobile) {
-
-        try {
-            navigator.startApp.check('https://chess.com/member/christian9311').then(function () {
-                window.location.href = 'https://chess.com/member/christian9311';
-            });
-        } catch (error) {
-            window.location.href = 'https://chess.com/member/christian9311';
-        }
-    } else {
-        window.location.href = 'https://chess.com/member/christian9311';
-    }
+    handleAppRedirect('chess://member/christian9311', 'chess://member/christian9311', 'https://chess.com/member/christian9311');
 });
 
+// Speedrun.com
 document.getElementById('speedrun').addEventListener('click', function () {
-
-    if (isMobile) {
-
-        try {
-            navigator.startApp.check('https://www.speedrun.com/users/Christian9311').then(function () {
-                window.location.href = 'https://www.speedrun.com/users/Christian9311';
-            });
-        } catch (error) {
-            window.location.href = 'https://www.speedrun.com/users/Christian9311';
-        }
-    } else {
-        window.location.href = 'https://www.speedrun.com/users/Christian9311';
-    }
+    window.location.href = 'https://www.speedrun.com/users/Christian9311'; // Open Speedrun website for both mobile and desktop
 });
